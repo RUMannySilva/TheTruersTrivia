@@ -20,22 +20,29 @@ let questions = [
     answer: 'No'
   }
 ];
-
+let current = 2;
 let score = 0;
 
-for (let i = 0; i < questions.length; i++) {
-  let currentAnswer = '';
 
-  do {
-    currentAnswer = window.prompt(questions[i].question).trim();
-  } while (currentAnswer.length === 0);
-
-  if (currentAnswer.toUpperCase() === questions[i].answer.toUpperCase()) {
-    window.alert('Correct! You might not be as dumb as I thought you were.');
-    score++;
-  } else {
-    window.alert('Wrong human, try again!');
-  }
+function printAppScreen(htmlString){
+  let containerElem = document.querySelector('#container');
+  containerElem.innerHTML = htmlString;
 }
 
-window.alert(`Pffft! I guess your final score is ${score}, if you even care about those things.`);
+// PRINT SECOND-PAGE
+
+function printQuestionPage(){
+printAppScreen(`
+
+    <p class="lead col-ms-4 mb-2 mt-5" id="question">${questions[current].question}</p>
+    <form class="d-flex flex-row mt-5" id="form">
+       <input type="text" id="answers-user" class="white-space form-control">
+       <button class="btn btn-primary" href="#" role="button" id="play">check</button>
+    </form>
+`);
+
+  // let checkButton = document.querySelector(`#check`);
+  // checkButton.addEventListener(`click, Game`);
+ }
+
+printQuestionPage(0);
