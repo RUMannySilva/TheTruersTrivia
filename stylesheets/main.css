@@ -10,17 +10,15 @@
 #main-section-content{
     min-height:50%;
     min-width: 50%;
-    border: 1px solid black;
 }
 
-.fix {
+ .fix {
 position: absolute;
 top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
-}
+} 
 
 .main-2Scr {
   min-height: 100vh;
 }
-
